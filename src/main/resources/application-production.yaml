@@ -1,0 +1,40 @@
+spring:
+  banner:
+    location: classpath:/banners/prod.txt
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: registernrestro@gmail.com
+    password: Nepal$11
+    properties:
+      mail:
+        smtp:
+          auth: true
+          connectiontimeout: 5000
+          timeout: 5000
+          writetimeout: 5000
+          starttls:
+            enable: true
+      allow-bean-definition-overriding: true
+
+management:
+  endpoint:
+    logfile:
+      enabled: false
+  endpoints:
+    web:
+      exposure:
+        include: health, info, logfile
+      base-path: /manage
+    enabled-by-default: false
+  server:
+    port: 6000
+logging:
+  file:
+    name: /tmp/makalu_restro.log
+  level:
+    ROOT: INFO
+    com: INFO
+    org.springframework: INFO
+restro:
+  fronEndUrl: "https://nrestro.com"

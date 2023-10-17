@@ -1,0 +1,65 @@
+spring:
+  profiles:
+    active: 'dev'
+    group:
+      test: test,debug
+      dev: develop,localdb
+      prod: production
+  main:
+    allow-circular-references: 'true'
+    allow-bean-definition-overriding: 'true'
+  datasource:
+    hikari:
+      maxLifetime: '2000000'
+      connectionTimeout: '30000'
+      leakDetectionThreshold: '60000'
+      minimumIdle: '5'
+      poolName: SpringBootJPAHikariCP
+      max-lifetime: '900000'
+      idleTimeout: '30000'
+      maximumPoolSize: '20'
+    initialization-mode: always
+  mail:
+    properties:
+      mail:
+        smtp:
+          starttls:
+            enable: 'true'
+          auth: 'true'
+          connectiontimeout: '5000'
+          writetimeout: '5000'
+          timeout: '5000'
+  jpa:
+    hibernate:
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: none
+  mvc:
+    view:
+      prefix: /WEB-INF/jsp/
+      suffix: .jsp
+  session:
+    timeout:
+      seconds: '10000'
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+com:
+  ecom:
+    persistance:
+      login:
+        url: ${spring.datasource.url}
+server:
+  port: '8080'
+  servlet:
+    session:
+      timeout: 43200m
+      cookie:
+        max-age: 43200m
+    context-path: /
+#
+#security:
+#  oauth2:
+#    resource:
+#      filter-order: '3'
+#api:
+#  base-path: 'api'

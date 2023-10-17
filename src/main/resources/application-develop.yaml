@@ -1,0 +1,17 @@
+spring:
+  banner:
+    location: classpath:/banners/dev.txt
+  devtools:
+    restart:
+      enabled: true
+
+logging:
+  level:
+    ROOT: INFO
+    com: INFO
+    org.springframework: INFO
+
+
+
+
+

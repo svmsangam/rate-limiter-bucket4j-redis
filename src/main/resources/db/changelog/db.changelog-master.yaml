@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: ../patch/change.yaml
+      relativeToChangelogFile: true

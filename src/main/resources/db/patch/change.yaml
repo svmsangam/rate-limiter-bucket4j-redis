@@ -1,0 +1,52 @@
+databaseChangeLog:
+      - changeSet:
+          id: 2023-10-16-order-create-table
+          author: suvam
+          changes:
+            - createTable:
+                tableName: orders
+                columns:
+                  - column:
+                      name: id
+                      type: bigint
+                      autoIncrement: true
+                      constraints:
+                        primaryKey: true
+                        nullable: false
+                  - column:
+                      name: created
+                      type: date
+                      constraints:
+                        nullable: false
+                        defaultValue: null
+                  - column:
+                      name: last_modified
+                      type: date
+                      constraints:
+                        defaultValue: null
+                  - column:
+                      name: version
+                      type: int
+                      constraints:
+                        nullable: false
+                        defaultValue: 0
+                  - column:
+                      name: name
+                      type: varchar(255)
+                      constraints:
+                        nullable: false
+                  - column:
+                      name: quantity
+                      type: int
+                      constraints:
+                        nullable: false
+                        defaultValue: 0
+                  - column:
+                      name: amount
+                      type: double
+                      constraints:
+                        nullable: false
+                        defaultValue: 0
+
+
+
